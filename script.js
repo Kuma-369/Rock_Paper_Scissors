@@ -49,10 +49,27 @@ function playRound(humanChoice, computerChoice) {
 
     // Tie condition
     if (cleanHumanChoice === computerChoice) {
-       console.log(`It's a tie! Both chose ${humanChoice}.`);
+       console.log(`It's a tie! Both chose ${computerChoice}.`);
        console.log(`Current Score - Human: ${humanScore}, Computer: ${computerScore}`);
     }
 
+    // Human wins
+    // ELSE IF Human: rock AND Computer: scissors 
+    // OR Human: paper AND Computer: rock 
+    // OR Human: scissors AND Computer: paper
+    // Message: You win! Paper beats Rock.
+    // Show Human score and Computer score.
+    else if (
+        (cleanHumanChoice === "paper" && computerChoice === "rock") ||
+        (cleanHumanChoice === "scissors" && computerChoice === "paper") ||
+        (cleanHumanChoice === "rock" && computerChoice === "scissors")
+     ) {
+        console.log(`You win! ${humanChoice} beats ${computerChoice}.`)
+    }
+
+    // Computer wins
+    // ELSE 
+    // Message: You lose! Paper beats Rock.
 }
 
 const humanSelection = getHumanChoice();
