@@ -7,9 +7,20 @@
 // IF interger = 2 THEN return string "scissors".
 
 function getComputerChoice() {
+    // Return interger from 0 to 2 randomly.
     const randomInt = Math.floor(Math.random() * 3);
-    return randomInt;
-   // Return interger from 0 to 2 randomly.
+
+    // Use condition logic to return matching string.
+    if (randomInt === 0){
+        return "rock";
+    } else if (randomInt === 1){
+        return "paper";
+    } else {
+        return "scissors";
+    }
+   
 }
 
+console.log(getComputerChoice());
+console.log(getComputerChoice());
 console.log(getComputerChoice());
