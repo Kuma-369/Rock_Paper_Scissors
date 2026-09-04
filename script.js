@@ -21,6 +21,41 @@ function getComputerChoice() {
    
 }
 
-console.log(getComputerChoice());
-console.log(getComputerChoice());
-console.log(getComputerChoice());
+// FUNCTION getHumanChoice() to return one of the valid choice depending on the input.
+// PROMPT to get the user's input.
+// Create a message "Please enter your choice: "
+
+function getHumanChoice() {
+    const input = prompt("Please enter rock, paper, or scissors: ");
+    return input;
+}
+
+// Create two varibales humanScore and computerScore to keep track the scores.
+let humanScore = 0;
+let computerScore = 0;
+
+// FUNCTION playRound() to play one round.
+// Use two variables humanChoice() and computerChoice() as arguments.
+// Make humanChoice() case insenitive.
+// RETURN message according to the result. "You lose! Paper beats Rock."
+// Increase the scores based on the round winner.
+
+function playRound(humanChoice, computerChoice) {
+    // Make human choice to lowercase
+    const cleanHumanChoice = humanChoice.toLowerCase();
+
+    console.log("Human: ", cleanHumanChoice);
+    console.log("Computer: ", computerChoice);
+
+    // Tie condition
+    if (cleanHumanChoice === computerChoice) {
+       console.log(`It's a tie! Both chose ${humanChoice}.`);
+       console.log(`Current Score - Human: ${humanScore}, Computer: ${computerScore}`);
+    }
+
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
