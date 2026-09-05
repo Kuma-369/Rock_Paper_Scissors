@@ -65,11 +65,22 @@ function playRound(humanChoice, computerChoice) {
         (cleanHumanChoice === "rock" && computerChoice === "scissors")
      ) {
         console.log(`You win! ${humanChoice} beats ${computerChoice}.`)
+        
+        // Add score to human side and show the score.
+        humanScore++;
+        console.log(`Human score: ${humanScore} Computer score: ${computerScore}`);
     }
 
     // Computer wins
     // ELSE 
     // Message: You lose! Paper beats Rock.
+    else {
+        console.log(`You lose! ${computerChoice} beats ${humanChoice}.`);
+
+        //Add the score to computer side and show the score.
+        computerScore++;
+        console.log(`Human score: ${humanScore} Computer score: ${computerScore}`);
+    }
 }
 
 const humanSelection = getHumanChoice();
